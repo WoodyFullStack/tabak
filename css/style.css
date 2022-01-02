@@ -1,5 +1,5 @@
 /* Css */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800&subset=latin,cyrillic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800&subset=latin,cyrillic);
 /* ======================================================================== */
 /* ! Font
 /* ======================================================================== */
@@ -48,10 +48,10 @@ font-family:"Open Sans"
 }
 
 .btn-tomato,
-.btn-tomato:focus, 
+.btn-tomato:focus,
 .btn-tomato:active,
-.btn-tomato.active, 
-.btn-tomato.disabled, 
+.btn-tomato.active,
+.btn-tomato.disabled,
 .btn-tomato[disabled] {
 	background: #ffb217 none;
 	color: #fff;
@@ -93,10 +93,10 @@ font-family:"Open Sans"
 }
 
 .btn-tomato,
-.btn-tomato:focus, 
+.btn-tomato:focus,
 .btn-tomato:active,
-.btn-tomato.active, 
-.btn-tomato.disabled, 
+.btn-tomato.active,
+.btn-tomato.disabled,
 .btn-tomato[disabled] {
 	background: #ffb131 none;
 	color: #fff;
