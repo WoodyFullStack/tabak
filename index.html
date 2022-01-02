@@ -1,0 +1,183 @@
+<?php header("Content-type: text/html; charset=utf-8");?>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Табак</title>
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/liMarquee.css" rel="stylesheet">
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/jquery.liMarquee.js"></script>
+
+<!-- Инициализация слайдера -->
+		<script>
+			$(window).load(function(){
+				$('.str_wrap').liMarquee();
+			});
+			$(document).on('click','.callback',function () {
+				$('.popupform').css('display','block');
+				$('.popuploader').css('display','none');
+				$('.popupholder').css('display','none');
+				$('#popuplayerholder').fadeIn(200);
+			});
+			$(document).on('submit','.callbackform',function (event) {
+				event.preventDefault();
+				$('.popupform').css('display','none');
+				$('.popuploader').css('display','block');
+				$('.popupholder').css('display','none');
+				var str = $(".callbackform").serialize();
+				$.post('function/sendmail.php', str, function(json) {
+					if (json=='error') {
+						alert("При отправке произошла ошибка, попробуйте повторить заказ позднее.");
+						$("#popuplayerholder").fadeOut(200);
+					} else {
+						$('.popupholder').fadeIn(200);
+						$('.popuploader').fadeOut(200);
+					}
+				});
+				return false;
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="popuplayerholder" class="popuplayerholder">
+			<div class="popupbg" onclick="$('#popuplayerholder').fadeOut(200);"></div>
+			<div style="width:366px;height:280px;background:#fff;position:fixed;left:50%;top:50%;margin:-140px 0 0 -180px;padding:auto;" class="popupform">
+				<div style="text-align:center;margin-top:25px;font-weight:600;font-size:18px">ПЕРЕЗВОНИТЕ МНЕ</div>	
+				<form style="width:300px;margin:auto;"class="callbackform">
+					<input name="name" class="callback_text" type="text" placeholder="Имя">
+					<input name="phone" class="callback_text" type="text" placeholder="Контактный телефон">
+					<input type="submit" class="submit-btn btn-tomato callback_submit" value="ОТПРАВИТЬ ЗАЯВКУ">
+					<div class="popupclose" onclick="$('#popuplayerholder').fadeOut(200);"></div>
+				</form>
+			</div>
+			<div class="popuploader"><img src="images/loader.gif"/></div>
+			<div class="popupholder">
+			<div class="popupclose" onclick="$('#popuplayerholder').fadeOut(200);"></div>
+			<div class="popupheader">Заявка отправлена</div>
+			<div class="popuptext">	В ближайшее время с Вами свяжется наш специалист.</div>
+			<input class="popupbuttonbg" type="button" value="Ok" onclick="$('#popuplayerholder').fadeOut(200);" />
+			</div>
+		</div>
+
+		<div class="full_content">
+			<section class="main_header">
+				<div class="content">
+						<a href="index.html"><img style="float:left" src="images/Logo.png"></a>
+							<div class="menu">
+								<ul>
+									<li><a class="menu_button" href="company.html">О КОМПАНИИ</a></li>
+									<li><a class="menu_button" href="vacancy.html">РАБОТА У НАС</a></li>
+									<li><a class="menu_button" href="places.html">ФИЛИАЛЫ</a></li>
+									<li>+7 (8182) 45-09-20</li>
+								</ul>
+								<div class="callback">&nbsp<span>Вам перевзонить?</span></div>
+							</div>
+							<div align="center" class="main_header_text">
+								<span>ДИСТРИБУЦИЯ БАКАЛЕЙНОЙ ПРОДУКЦИИ В АРХАНГЕЛЬСКОЙ ОБЛАСТИ<span>
+							</div>
+							
+							<div class="price-btn btn-tomato">
+								<img style="float:left" src="ico/price.png">
+								<a href="price.xlsx" download><span>СКАЧАТЬ ПРАЙС ЛИСТ<span></a>
+							</div>
+					</div>
+			</section>	
+
+			<section class="main_section_2">
+				<div class="main_content">
+					<div class="main_section_2_left">
+						<div class="main_section_2_headertext">ВЫГОДНОЕ ПРЕДЛОЖЕНИЕ</div>
+						<br>
+						<div class="main_section_2_text">
+						Целевая страница (англ. «landing page» или «продающая страница»)
+						 — это веб-страница рекламного характера, содержащая информацию об услуге или товаре,
+						</div>
+					</div>
+					<div class="main_section_2_right">
+						<div class="main_section_2_headertext">ШИРОКИЕ ВОЗМОЖНОСТИ</div>
+						<br>
+						<div class="main_section_2_text">
+						Целевая страница (англ. «landing page» или «продающая страница»)
+						 — это веб-страница рекламного характера, содержащая информацию об услуге или товаре,
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="main_section_3">
+				<div class="main_content" style="position:relative;">
+					<div class="main_section_3_left">О КОМПАНИИ</div>
+					<div class="main_section_3_right">
+						<div>
+						Целевая страница (англ. «landing page» или «продающая страница»)
+						 — это веб-страница рекламного характера, содержащая информацию об услуге или товаре,
+						</div>
+						<ul class="product_list">
+							<li>Продукция быстрого приготовления</li>
+							<li>Чай и кофе</li>
+							<li>Кондитерские изделия</li>
+							<li>Крупы</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="main_section_4">
+				<div class="main_content" style="position:relative;">
+					<div class="main_section_4_header">ОСНОВНЫЕ ПОЗИЦИИ</div>
+					<div class="main_section_4_text" style="left:332px;top:227px;">МИШКА НА СЕВЕРЕ</div>
+					<div class="main_section_4_text" style="left:745px;top:227px;">ПРИНЦЕССА НУРИ</div>
+					<div class="main_section_4_text" style="left:145px;top:432px;">GREENFIELD</div>
+					<div class="main_section_4_text" style="left:578px;top:432px;">MERCI</div>
+				</div>
+			</section>
+
+			<section style="min-width:654px;max-width:1000px;height:auto;background:#ECECEC;margin:0px auto 0px auto;padding:70px 183px 70px 183px;position:relative;line-height:2px;">
+				<div class="str_wrap">
+				    <div style="display:inline-block;"><div class="scroll_item1 scroll"></div></div>
+				    <div style="display:inline-block;"><div class="scroll_item2 scroll"></div></div>
+				    <div style="display:inline-block;"><div class="scroll_item3 scroll"></div></div>
+				    <div style="display:inline-block;"><div class="scroll_item4 scroll"></div></div>
+			        <div style="display:inline-block;"><div class="scroll_item5 scroll"></div></div>	
+				    <div style="display:inline-block;"><div class="scroll_item6 scroll"></div></div>
+				</div>
+				<div style="background:url(images/fade_left.png) repeat-y;position:absolute;left:183px;top:0;height:100%;width:100px"></div>
+				<div style="background:url(images/fade_right.png) repeat-y;position:absolute;right:183px;top:0;height:100%;width:100px"></div>
+			</section>
+
+			<section class="feedback">
+				<div class="main_content" style="position:relative;">
+					<div class="feedback_left">КОНТАКТЫ</div>
+					<div class="feedback_right">
+						<div class="feedback_right_text">
+						Целевая страница (англ. «landing page» или «продающая страница»)
+						 — это веб-страница рекламного характера, содержащая информацию об услуге или товаре,
+						</div>
+						<form>
+							<input class="input_text" type="text" placeholder="Имя">
+							<input class="input_text" type="text" placeholder="Контактный телефон">
+							<input class="input_text" type="text" placeholder="Email">
+							<input type="submit" class="submit-btn btn-tomato input_submit" value="ОТПРАВИТЬ ЗАЯВКУ">
+						</form>
+						<div class="feedback_telmail">
+							<div class="feedback_tel" ><span>+7 (8182) 45-09-20</span></div>
+							<div class="feedback_mail"><span> market@tabak29.ru</span></div>
+						</div>
+					<div>
+				</div>
+			</section>
+
+			<section class="footer">
+				<div class="footer_content">
+					<div class="footer_left">© 2000 - 2014 Табак и К</div>
+					<div class="footer_right">
+						<div>Сделано с</div>
+						<div>в it planet</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>

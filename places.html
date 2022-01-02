@@ -1,0 +1,250 @@
+<?php header("Content-type: text/html; charset=utf-8");?>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Табак</title>
+		<link href="css/style.css" rel="stylesheet">
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<script>
+		$(document).on('click','.callback',function () {
+			$('.popupform').css('display','block');
+			$('.popuploader').css('display','none');
+			$('.popupholder').css('display','none');
+			$('#popuplayerholder').fadeIn(200);
+		});
+		$(document).on('submit','.callbackform',function (event) {
+			event.preventDefault();
+			$('.popupform').css('display','none');
+			$('.popuploader').css('display','block');
+			$('.popupholder').css('display','none');
+			var str = $(".callbackform").serialize();
+			$.post('function/sendmail.php', str, function(json) {
+				if (json=='error') {
+					alert("При отправке произошла ошибка, попробуйте повторить заказ позднее.");
+					$("#popuplayerholder").fadeOut(200);
+				} else {
+					$('.popupholder').fadeIn(200);
+					$('.popuploader').fadeOut(200);
+				}
+			});
+			return false;
+		});
+			
+
+		// Дождёмся загрузки API и готовности DOM.
+		ymaps.ready(init);
+		function init () {
+			var myMap;
+			$('.places_section_textblock_map').click(function () {
+				myMap = new ymaps.Map('mapmap', {
+					// При инициализации карты обязательно нужно указать
+					// её центр и коэффициент масштабирования.
+					center: [$(this).find('.map-x').val(),$(this).find('.map-y').val()], // Москва
+					zoom: 17
+				});
+				myMap.geoObjects.add(new ymaps.Placemark([$(this).find('.map-x').val(),$(this).find('.map-y').val()],{
+					preset: 'islands#dotIcon',
+					iconColor: '#3b5998'
+				}));
+				if ($(this).find('.map-x2').length>0) {
+					myMap.geoObjects.add(new ymaps.Placemark([$(this).find('.map-x2').val(),$(this).find('.map-y2').val()],{
+						preset: 'islands#dotIcon',
+						iconColor: '#3b5998'
+					}));
+				}
+				$('.mapheader').html($(this).find('.mapname').val());
+				$('#maplayerholder').fadeIn(200);
+
+			});
+		}
+
+		</script>
+	</head>
+    
+	<body>
+		<div id="popuplayerholder" class="popuplayerholder">
+			<div class="popupbg" onclick="$('#popuplayerholder').fadeOut(200);"></div>
+			<div style="width:366px;height:280px;background:#fff;position:fixed;left:50%;top:50%;margin:-140px 0 0 -180px;padding:auto;" class="popupform">
+				<div style="text-align:center;margin-top:25px;font-weight:600;font-size:18px">ПЕРЕЗВОНИТЕ МНЕ</div>	
+				<form style="width:300px;margin:auto;"class="callbackform">
+					<input name="name" class="callback_text" type="text" placeholder="Имя">
+					<input name="phone" class="callback_text" type="text" placeholder="Контактный телефон">
+					<input type="submit" class="submit-btn btn-tomato callback_submit" value="ОТПРАВИТЬ ЗАЯВКУ">
+					<div class="popupclose mapclose" onclick="$('#popuplayerholder').fadeOut(200);"></div>
+				</form>
+			</div>
+			<div class="popuploader"><img src="images/loader.gif"/></div>
+			<div class="popupholder">
+			<div class="popupclose" onclick="$('#popuplayerholder').fadeOut(200);"></div>
+			<div class="popupheader">Заявка отправлена</div>
+			<div class="popuptext">	В ближайшее время с Вами свяжется наш специалист.</div>
+			<input class="popupbuttonbg" type="button" value="Ok" onclick="$('#popuplayerholder').fadeOut(200);" />
+			</div>
+		</div>
+
+		<div id="maplayerholder" class="popuplayerholder">
+			<div class="popupbg mapbg" onclick="$('#maplayerholder').fadeOut(200);$('#mapmap').html('');"></div>
+			<div class="mapholder">
+				<div class="mapheader"></div>	
+				<div id="mapmap"></div>
+				<div class="popupclose" onclick="$('#maplayerholder').fadeOut(200);$('#mapmap').html('');"></div>
+			</div>
+		</div>
+
+		<div class="full_content">
+			<section class="places_header">
+				<div class="content">
+						<a href="index.html"><img style="float:left" src="images/Logo.png"></a>
+							<div class="menu">
+								<ul>
+									<li><a class="menu_button" href="company.html">О КОМПАНИИ</a></li>
+									<li><a class="menu_button" href="vacancy.html">РАБОТА У НАС</a></li>
+									<li><a class="menu_button" href="places.html">ФИЛИАЛЫ</a></li>
+									<li>+7 (8182) 45-09-20</li>
+								</ul>
+								<div class="callback">&nbsp<span>Вам перевзонить?</span></div>
+							</div>
+							<div align="center" class="header_text">
+								<span>АДРЕСА ФИЛИАЛОВ<span>
+							</div>
+					</div>
+			</section>	
+
+			<section class="places_section">
+				<div class="main_content" style="position:relative;">
+
+					<div class="places_section_block">
+						<div class="places_section_textblock">
+							<div class="places_section_textblock_city">Северодвинск</div>
+							<div class="places_section_textblock_adress">Ул.Ломоносова 73</div>
+							<div class="places_section_textblock_map">								
+								<span>
+									<input class="mapname" type=hidden value="Северодвинск Ул.Ломоносова 73">
+									<input class="map-x" type=hidden value="64.553102">
+									<input class="map-y" type=hidden value="39.800338">
+									Показать на карте
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="places_section_block">
+						<div class="places_section_textblock">
+							<div class="places_section_textblock_city">Няндома</div>
+							<div class="places_section_textblock_adress">Ул. Заводская 17; ул. Шевченко 1</div>
+							<div class="places_section_textblock_tel">(81838) 7-32-67</div>
+							<div class="places_section_textblock_map">								
+								<span>
+									<input class="mapname" type=hidden value="Няндома Ул. Заводская 17; ул. Шевченко 1">
+									<input class="map-x" type=hidden value="61.667641">
+									<input class="map-y" type=hidden value="40.272558">
+									<input class="map-x2" type=hidden value="61.667347">
+									<input class="map-y2" type=hidden value="40.215859">
+									Показать на карте
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="places_section_block">
+						<div class="places_section_textblock">
+							<div class="places_section_textblock_city">Онега</div>
+							<div class="places_section_textblock_adress">Ул. Привокзальная 15, корпус 1</div>
+							<div class="places_section_textblock_tel">+7 (8182) 45-09-20</div>
+							<div class="places_section_textblock_map">								
+								<span>
+									<input class="mapname" type=hidden value="Онега Ул. Привокзальная 15, корпус 1">
+									<input class="map-x" type=hidden value="63.923293">
+									<input class="map-y" type=hidden value="38.085961">
+									Показать на карте
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="places_section_block">
+						<div class="places_section_textblock">
+							<div class="places_section_textblock_city">Вельск</div>
+							<div class="places_section_textblock_adress">Ул. 5-я Пристанционная 5, стр 5</div>
+							<div class="places_section_textblock_tel">(81836) 6-50-38</div>
+							<div class="places_section_textblock_map">								
+								<span>
+									<input class="mapname" type=hidden value="Вельск Ул. 5-я Пристанционная 5, стр 5">
+									<input class="map-x" type=hidden value="61.066145">
+									<input class="map-y" type=hidden value="42.103353">
+									Показать на карте
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="places_section_block">
+						<div class="places_section_textblock">
+							<div class="places_section_textblock_city">Плесецк</div>
+							<div class="places_section_textblock_adress">Ул. Синкевича 17, стр 2</div>
+							<div class="places_section_textblock_tel">(81832) 6-50-38</div>
+							<div class="places_section_textblock_map">								
+								<span>
+									<input class="mapname" type=hidden value="Плесецк Ул. Синкевича 17, стр 2">
+									<input class="map-x" type=hidden value="62.702591">
+									<input class="map-y" type=hidden value="40.290734">
+									Показать на карте
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="places_section_block">
+						<div class="places_section_textblock">
+							<div class="places_section_textblock_city">Котлас</div>
+							<div class="places_section_textblock_adress">Ул. 7-го Съезда Советов 97</div>
+							<div class="places_section_textblock_map">								
+								<span>
+									<input class="mapname" type=hidden value="Котлас Ул. 7-го Съезда Советов 97">
+									<input class="map-x" type=hidden value="61.268101">
+									<input class="map-y" type=hidden value="46.637324">
+									Показать на карте
+								</span>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="feedback">
+				<div class="main_content" style="position:relative;">
+					<div class="feedback_left">КОНТАКТЫ</div>
+					<div class="feedback_right">
+						<div class="feedback_right_text">
+						Целевая страница (англ. «landing page» или «продающая страница»)
+						 — это веб-страница рекламного характера, содержащая информацию об услуге или товаре,
+						</div>
+						<form>
+							<input class="input_text" type="text" placeholder="Имя">
+							<input class="input_text" type="text" placeholder="Контактный телефон">
+							<input class="input_text" type="text" placeholder="Email">
+							<input type="submit" class="submit-btn btn-tomato input_submit" value="ОТПРАВИТЬ ЗАЯВКУ">
+						</form>
+						<div class="feedback_telmail">
+							<div class="feedback_tel" ><span>+7 (8182) 45-09-20</span></div>
+							<div class="feedback_mail"><span> market@tabak29.ru</span></div>
+						</div>
+					<div>
+				</div>
+			</section>
+
+			<section class="footer">
+				<div class="footer_content">
+					<div class="footer_left">© 2000 - 2014 Табак и К</div>
+					<div class="footer_right">
+						<div>Сделано с</div>
+						<div>в it planet</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>

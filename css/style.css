@@ -1,0 +1,837 @@
+/* Css */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800&subset=latin,cyrillic);
+/* ======================================================================== */
+/* ! Font
+/* ======================================================================== */
+@font-face {
+  font-family: OSReg;
+  src: url(../font/opensans-regular.ttf) format("opentype");
+}
+
+a, a:visited {
+	text-decoration:none;
+	color:white;
+
+}
+
+body {
+margin:0px auto;
+font-family:"Open Sans"
+}
+
+.price-btn {
+ 	margin:25px auto 0 auto;
+ 	width:180px;
+ 	text-align:center;
+ 	padding:15px 20px 12px 20px;
+ 	font-size: 12px;
+ 	font-weight:700;
+ 	border-radius: 4px;
+ 	/*border-bottom:2px inset #ee9812;*/
+ 	-webkit-box-shadow: 0px 3px 1px 0px rgba(238, 152, 18, 1);
+	-moz-box-shadow:    0px 3px 1px 0px rgba(238, 152, 18, 1);
+	box-shadow:         0px 3px 1px 0px rgba(238, 152, 18, 1);
+ }
+
+.price-btn:hover,
+.price-btn:active {
+	text-decoration: none;
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+	-o-transition: 0.25s;
+	transition: 0.25s;
+	color: #fff;
+	cursor:pointer;
+	-webkit-box-shadow: 0px 3px 1px 0px rgba(255, 196, 102, 0.95);
+	-moz-box-shadow:    0px 3px 1px 0px rgba(255, 196, 102, 0.95);
+	box-shadow:         0px 3px 1px 0px rgba(255, 196, 102, 0.95);
+}
+
+.btn-tomato,
+.btn-tomato:focus, 
+.btn-tomato:active,
+.btn-tomato.active, 
+.btn-tomato.disabled, 
+.btn-tomato[disabled] {
+	background: #ffb217 none;
+	color: #fff;
+}
+
+.btn-tomato:hover,
+.btn-tomato-dark:hover {
+	background: #ffc466 none
+}
+
+.submit-btn {
+	border:0px;
+	width:300px;
+ 	margin:25px auto 0 auto;
+ 	text-align:center;
+ 	padding:15px 20px 12px 20px;
+ 	font-size: 12px;
+ 	font-weight:700;
+ 	border-radius:4px;
+ /*	border-bottom:2px inset #ee9812; */
+ 	-webkit-box-shadow: 0px 3px 1px 0px rgba(238, 152, 18, 1);
+	-moz-box-shadow:    0px 3px 1px 0px rgba(238, 152, 18, 1);
+	box-shadow:         0px 3px 1px 0px rgba(238, 152, 18, 1);
+ }
+
+.submit-btn:hover,
+.submit-btn:active {
+	text-decoration: none;
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+	-o-transition: 0.25s;
+	transition: 0.25s;
+	color: #fff;
+	cursor:pointer;
+	/*border-bottom:2px inset #ee9812;*/
+	-webkit-box-shadow: 0px 3px 1px 0px rgba(255, 196, 102, 0.95);
+	-moz-box-shadow:    0px 3px 1px 0px rgba(255, 196, 102, 0.95);
+	box-shadow:         0px 3px 1px 0px rgba(255, 196, 102, 0.95);
+}
+
+.btn-tomato,
+.btn-tomato:focus, 
+.btn-tomato:active,
+.btn-tomato.active, 
+.btn-tomato.disabled, 
+.btn-tomato[disabled] {
+	background: #ffb131 none;
+	color: #fff;
+}
+
+.btn-tomato:hover,
+.btn-tomato-dark:hover {
+	background: #ffc36c none
+}
+
+.full_content {
+	min-width:1020px;
+	max-width:1920px
+}
+
+.content{
+	width:1000px;
+	margin:0px auto;
+	padding:100px 0;
+}
+
+.main_content{
+	width:1000px;
+	margin:0px auto;
+	padding:80px 0;
+}
+
+.menu {
+	margin:0 10px 0 0;
+	float:right;
+}
+
+.menu li {
+	font-family:"Open Sans";
+	font-weight:600;
+	margin-left:60px;
+	font-size:14px;
+	float:left;
+	color:white;
+}
+
+.menu_button {
+	color:FFF;
+}
+
+.menu_button:hover {
+	text-decoration: none;
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+	-o-transition: 0.25s;
+	transition: 0.25s;
+	color:#ffb131;
+	cursor:pointer;
+}
+
+.menu ul {
+	list-style:none;
+	color:white;
+	margin:0;
+}
+
+.menu div {
+	background:url('/ico/Ring me up icon.png') no-repeat;
+	background-position-y:5px;
+	float:right;
+	margin-top:10px;
+	padding-left:24px;
+}
+
+.menu div span {
+	font-size:13px;
+	font-weight:400;
+	border-bottom:1px dashed gray;
+	padding-bottom:3px;
+	color:#fff;
+}
+
+.menu div span:hover {
+	font-size:13px;
+	font-weight:400;
+	border-bottom:1px dashed #ffc36c;
+	padding-bottom:3px;
+	color:#ffc36c;
+	cursor:pointer;
+}
+
+.main_header {
+	min-width:1020px;
+	max-width:1367px;
+	height:694px;
+	background-image:url('../images/Main Photo BG.jpg');
+	background-repeat:no-repeat;
+	margin:0px auto 0px auto;
+}
+
+.company_header {
+	min-width:1020px;
+	max-width:1367px;
+	height:687px;
+	background-image:url('../images/Company Page BG.jpg');
+	background-repeat:no-repeat;
+	margin:0px auto 0px auto
+}
+
+.places_header {
+	min-width:1020px;
+	max-width:1367px;
+	height:687px;
+	background-image:url('../images/Places Photo BG.jpg');
+	background-repeat:no-repeat;
+	margin:0px auto 0px auto;
+}
+
+.vacancy_header {
+	min-width:1020px;
+	max-width:1367px;
+	height:687px;
+	background-image:url('../images/Vacancy Main BG.jpg');
+	background-repeat:no-repeat;
+	margin:0px auto 0px auto;
+}
+
+.main_header_text {
+	max-width:570px;
+	margin:140px auto 0px auto;
+}
+
+.header_text {
+	max-width:570px;
+	margin:220px auto 0px auto;
+}
+
+.main_header_text span, .header_text span {
+	line-height:65px;
+	font-size:34px;
+	color:white;
+	font-weight:700;
+}
+
+.main_section_2 {
+	min-width:1020px;
+	max-width:1367px;
+	height:337px;
+	margin:0px auto 0px auto;
+}
+
+.main_section_2_left {
+	display:inline-block;
+	margin-right:50px;
+	width:450px;
+	background:url('../images/List icon.png') no-repeat;
+}
+
+.main_section_2_right {
+	display:inline-block;
+	width:450px;
+	background:url('../images/List icon.png') no-repeat;
+}
+
+.main_section_2_headertext {
+	width:150px;
+	margin-left:110px;
+	font-weight:600;
+	line-height:27px;
+	font-size:18px;
+}
+
+.main_section_2_text{
+	margin-left:110px;
+	font-weight:100;
+	line-height:25px;
+	font-size:13px;
+	text-align:justify;
+	color:#6e6e6e;
+	padding-right:45px;
+	font-family:OSReg;
+}
+
+.main_section_3 {
+	min-width:1020px;
+	max-width:1367px;
+	height:386px;
+	background:url('../images/Short Line.png') no-repeat center center #f2f2f2;
+	margin:0px auto 0px auto;
+}
+
+.main_section_3_left {
+	position:absolute;
+	height:42px;
+	top:50%;
+	margin-top:-42px;
+	line-height:42px;
+	vertical-align:middle;
+	font-size:30px;
+	font-weight:700;
+	width:40%;
+	display:inline-block;
+	text-align:center;
+}
+
+.main_section_3_right {
+	display:inline-block;
+	margin-left:55%;
+	margin-top:-10px;
+}
+
+.main_section_3_right div {
+	display:inline-block;
+	margin-left:64px;
+	font-weight:100;
+	line-height:25px;
+	font-size:13px;
+	text-align:justify;
+	padding-right:85px;
+	color:#6e6e6e;
+	font-family:OSReg;
+}
+
+.product_list {
+	list-style-image:url('../ico/YES icon.png');
+	margin-top:20px;
+	display:inline-block;
+	margin-left:44px;
+	font-weight:100;
+	line-height:30px;
+	font-size:14px;
+}
+
+.product_list li {
+	text-indent:8px;
+}
+
+.main_section_4 {
+	min-width:1020px;
+	max-width:1367px;
+	height:680px;
+	background:url('../images/lines.png') no-repeat center 185px #fff;
+	margin:0px auto 0px auto;
+}
+
+.main_section_4_header {
+	text-align:center;
+	margin-top:-10px;
+	font-size:30px;
+	font-weight:700;
+}
+
+.main_section_4_text {
+	position:absolute;
+	width:110px;
+	font-weight:700;
+	line-height:30px;
+	font-size:18px;
+}
+
+.feedback {
+	min-width:1020px;
+	max-width:1367px;
+	height:600px;
+	background:url('../images/Long Line.png') no-repeat center 80px;
+	margin:0px auto 0px auto;
+}
+
+.feedback_left {
+	position:absolute;
+	height:42px;
+	top:50%;
+	margin-top:-42px;
+	line-height:42px;
+	vertical-align:middle;
+	font-size:30px;
+	font-weight:700;
+	width:45%;
+	display:inline-block;
+	text-align:center;
+	margin-left:-9px;
+}
+
+.feedback_right {
+	display:inline-block;
+	margin-left:55%;
+	margin-top:-10px;
+}
+
+.feedback_right_text {
+	display:inline-block;
+	margin-left:64px;
+	font-weight:100;
+	line-height:25px;
+	font-size:13px;
+	text-align:justify;
+	padding-right:85px;
+	color:#6e6e6e;
+	font-family:OSReg;
+}
+
+.feedback_right form {
+	list-style-image:url('../ico/YES icon.png');
+	margin-top:16px;
+	display:inline-block;
+	margin-left:44px;
+	font-weight:100;
+	line-height:30px;
+	font-size:14px;
+}
+
+.input_text {
+	width:300px;
+	height:42px;
+	border:2px solid #e8e8e8;
+	border-radius:4px;
+	margin-top:16px;
+	margin-left:21px;
+	text-indent:18px;
+	font-size:13px;
+	color:#6e6e6e;
+	font-weight:300;
+}
+
+.input_submit {
+	margin-top:20px;
+	margin-left:21px;
+}
+
+.feedback_telmail {
+	display:inline-block;
+	margin-top:25px;
+	margin-left:44px;
+	font-size:13px
+}
+
+.feedback_tel {
+	display:inline-block;
+	background:url('../ico/Telephone icon.png') no-repeat;background-position-y:2px;
+	margin-left:20px;
+	margin-top:10px;
+	padding-left:20px;
+	text-indent:7px
+}
+
+.feedback_tel span {
+	font-weight:400;
+	color:#6e6e6e;
+}
+
+.feedback_mail {
+	display:inline-block;
+	background:url('../ico/Mail icon.png') no-repeat;background-position-y:2px;
+	margin-top:10px;
+	margin-left:17px;
+	padding-left:20px;
+	text-indent:7px;
+}
+
+.feedback_mail span {
+	font-weight:400;
+	color:#6e6e6e;
+}
+
+.footer {
+	min-width:1020px;
+	max-width:1367px;
+	height:112px;
+	background:#030416;
+	margin:0px auto 0px auto;
+}
+
+.footer_content{
+	width:1000px;
+	margin:0px auto;
+	padding:0px 0;
+	position:relative;
+}
+
+.footer_left {
+	position:absolute;
+	left:0px;
+	top:50px;
+	font-size:14px;
+	font-weight:600;
+	color:#6e6e6e;
+	text-align:center;
+	display:inline-block;
+}
+
+.footer_right {
+	position:absolute;
+	right:0px;top:50px;
+}
+
+.footer_right div:nth-child(1) {
+	font-size:14px;
+	font-weight:600;
+	color:#6e6e6e;
+	text-align:center;
+	display:inline-block;
+}
+
+.footer_right div:nth-child(2) {
+	background:url('../ico/Love icon.png') no-repeat left center;
+	text-indent:15px;
+	font-size:14px;
+	font-weight:600;
+	color:#6e6e6e;
+	text-align:center;
+	display:inline-block;
+}
+
+.company_section {
+	min-width:1020px;
+	max-width:1367px;
+	height:507px;
+	background:url('../images/Middle Line.png') no-repeat center center #f2f2f2;
+	margin:0px auto 0px auto;
+}
+
+.company_section_left {
+	position:absolute;height:42px;
+	top:50%;
+	margin-top:-42px;
+	line-height:42px;
+	vertical-align:middle;
+	font-size:30px;
+	font-weight:700;
+	width:40%;
+	display:inline-block;
+	text-align:center;
+}
+
+.company_section_textblock {
+	display:inline-block;
+	margin-left:55%;
+	margin-top:5px;
+}
+
+.company_section_textblock div {
+	display:inline-block;
+	margin-bottom:15px;
+	margin-left:64px;
+	font-weight:100;
+	line-height:26px;
+	font-size:13px;
+	text-align:justify;
+	padding-right:85px;
+	color:#6e6e6e;
+	font-family:OSReg;
+}
+
+.places_section {
+	min-width:1020px;
+	max-width:1367px;
+	height:875px;
+	background:#ECECEC;
+	margin:0px auto 0px auto;
+}
+
+.places_section_block {
+	margin:0 auto 25px auto;
+	border-radius:4px;
+	border:2px solid #E6E6E6;
+	width:790px;
+	height:88px;
+	background:url('../ico/Place Big icon.png') no-repeat 30px center #fff;
+}
+
+.places_section_textblock {
+	margin-top:23px;
+	margin-left:75px;
+}
+
+.places_section_textblock_city {
+	font-size:15px;
+	font-weight:600;
+	color:#6e6e6e;
+}
+
+.places_section_textblock_adress{
+	background:url('../ico/Adress icon.png') no-repeat;
+	background-position-y:4px;
+	text-indent:16px;
+	margin-top:8px;
+	font-size:13px;
+	display:inline-block;
+	font-weight:300;
+	color:#a09e9c;
+}
+
+.places_section_textblock_tel{
+	background:url('../ico/Telephone icon small.png') no-repeat;
+	background-position-y:2px;
+	text-indent:18px;
+	margin-top:-18px;
+	display:inline-block;
+	margin-left:8px;
+	font-size:13px;
+	font-weight:300;
+	color:#a09e9c;
+}
+
+.places_section_textblock_map {
+	background:url('../ico/Map icon.png') no-repeat;
+	background-position-y:6px;
+	float:right;
+	margin:-23px 40px 0 0;
+	padding-left:28px;
+	height:30px;
+	cursor:pointer;
+}
+
+.places_section_textblock_map span {
+	font-size:13px;
+	font-weight:400;
+	border-bottom:1px dashed #FFB217;
+	padding-bottom:3px;
+	color:#a09e9c;
+}
+
+.places_section_textblock_map span:hover {
+	border-bottom:1px dashed #ffc36c;
+	padding-bottom:3px;
+	color:#ffc36c;
+	cursor:pointer;
+}
+
+.vacancy_section {
+	min-width:1020px;
+	max-width:1367px;
+	height:1626px;
+	background:#ECECEC;
+	margin:0px auto 0px auto;
+}
+
+.vacancy_content {
+	position:relative;
+	background:url('../images/Mini Line.png') no-repeat center 88px;
+}
+
+.vacancy_section_info {
+	position:relative;
+	margin-bottom;
+}
+
+.vacancy_section_leftinfo {
+	position:absolute;
+	height:42px;
+	top:50%;
+	left:58px;
+	margin-top:-21px;
+	line-height:42px;
+	vertical-align:middle;
+	font-size:30px;
+	font-weight:700;
+	width:40%;
+	display:inline-block;
+	text-align:center;
+}
+
+.vacancy_section_rightinfo {
+	display:inline-block;
+	margin-left:55%;
+}
+
+.vacancy_section_rightinfo div {
+	display:inline-block;
+	margin-left:64px;
+	font-weight:400;
+	line-height:25px;
+	font-size:13px;
+	padding-right:85px;
+	color:#6e6e6e;
+	font-family:OSReg;
+}
+
+.vacancy_section_block {
+	margin:0 auto 25px auto;
+	border-radius:4px;
+	border:2px solid #E6E6E6;
+	width:790px;height:88px;
+	background:url('../ico/Vacancy icon.png') no-repeat 24px center #fff;
+}
+
+.vacancy_section_textblock {
+	margin-top:20px;
+	margin-left:80px;
+}
+
+.vacancy_section_textblock_prof {
+	font-size:15px;
+	font-weight:600;
+	color:#6e6e6e;
+}
+
+.vacancy_section_textblock_date {
+	background:url('../ico/Date icon.png') no-repeat;
+	background-position-y:2px;
+	text-indent:16px;
+	margin-top:8px;
+	font-size:13px;
+	display:inline-block;
+	font-weight:500;
+	color:#a09e9c;
+}
+
+.vacancy_section_textblock_place {
+	background:url('../ico/Place icon.png') no-repeat;
+	background-position-y:2px;
+	text-indent:18px;
+	margin-top:-18px;
+	display:inline-block;
+	margin-left:8px;
+	font-size:13px
+	;font-weight:500;
+	color:#a09e9c;
+}
+
+.vacancy_section_textblock_salary {
+	margin:-46px 0 0 558px;
+	padding-left:28px;
+	height:30px;
+}
+
+.vacancy_section_textblock_salary div:nth-child(1) {
+	font-size:15px;
+	font-weight:600;
+	color:#6e6e6e;
+}
+
+.vacancy_section_textblock_salary div:nth-child(2) {
+	background:url('../ico/Salary icon.png') no-repeat left center;
+	margin-top:7px;
+	text-indent:18px;
+	font-size:13px;
+	font-weight:400;
+	color:#a09e9c;
+}
+
+.scroll {
+	background-position:0 0;
+}
+.scroll:hover {
+	cursor:pointer;
+	background-position:center bottom;
+}
+
+.scroll_item1 {
+	background:url(../logo/kraft.png) no-repeat;
+	width:137px;
+	height:53px;
+	margin:auto 20px;
+}
+
+.scroll_item2 {
+	background:url(../logo/krupskoy.png) no-repeat;
+	width:96px;
+	height:61px;
+	margin:auto 20px;
+}
+
+.scroll_item3 {
+	background:url(../logo/logo-akbar.png) no-repeat;
+	width:123px;
+	height:57px;
+	margin:auto 20px;
+}
+
+.scroll_item4 {
+	background:url(../logo/nestle.png) no-repeat;
+	width:196px;
+	height:51px;
+	margin:auto 20px;
+}
+
+.scroll_item5 {
+	background:url(../logo/rollton.png) no-repeat;
+	width:133px;
+	height:60px;
+	margin:auto 20px;
+}
+
+.scroll_item6 {
+	background:url('../logo/stork logos.png') no-repeat;
+	width:118px;
+	height:57px;
+	margin:auto 20px;
+}
+
+
+.popuplayerholder {position:fixed;top:0;left:0;width:100%;height:100%;display:none;z-index:50001;}
+.popupbg {position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
+.popuploader,{position:absolute;top:50%;left:50%;width:48px;height:48px;margin-top:-24px;margin-left:-24px;}/*это блок с индикатором загрузки, можешь погуглить "gif preloader" их много*/
+.popupholder {position:absolute;top:50%;left:50%;width:400px;height:300px;margin-top:-150px;margin-left:-200px;background:#fff;}/* - ширина и высота фиксированная, фон с цветом и отступы сверху снизу -1/2 ширины/высоты (это окно с текстом)*/
+.popupclose {position:absolute;top:10px;right:10px;width:24px;height:24px;background:url(../images/close.png) no-repeat top right;cursor:pointer;}/*крестик для закрывания всплывающего окна*/
+.popupheader {position:absolute;top:30px;left:30px;text-align:left;font-size:14px;width:200px;color:#000;} /*заголовок всплывающего окна*/
+.popuptext {position:absolute;top:100px;left:15px;right:15px;font-size:12px;color:#000;} /*текст всплывающего окна*/
+.popupbuttonbg {position:absolute;bottom:30px;left:300px;width:50px;height:24px;} /*кнопка "ок"*/
+
+.callback_text {
+	width:296px;
+	height:42px;
+	border:2px solid #e8e8e8;
+	border-radius:4px;
+	margin-top:16px;
+	text-indent:18px;
+	font-size:13px;
+	color:#6e6e6e;
+	font-weight:300;
+}
+
+.callback_submit {
+	margin-top:30px;
+}
+
+.mapheader {
+	text-align:center;
+	margin-top:15px;
+	margin-bottom:15px;
+	font-weight:600;
+	font-size:18px;
+	line-height:20px;
+}
+
+.mapholder {
+	display:block;
+	width:600px;
+	height:500px;
+	background:#fff;
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin:-300px 0 0 -250px;
+	padding:auto;
+}
+
+#mapmap {
+	width:600px;
+	height:450px;
+	margin:auto;
+}
